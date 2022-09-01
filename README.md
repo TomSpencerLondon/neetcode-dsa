@@ -1,5 +1,5 @@
 # neetcode-dsa
-Practice Algorithms and Data Structures with Needcode
+Practice Algorithms and Data Structures with Neetcode
 
 
 # Static Arrays
