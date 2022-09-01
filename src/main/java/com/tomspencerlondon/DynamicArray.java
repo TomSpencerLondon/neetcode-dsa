@@ -6,17 +6,20 @@ class Solution {
 
   public static void main(String[] args) {
     DynamicArray array = new DynamicArray();
-    System.out.println(array);
+    array.print();
     array.pushback(2);
-    System.out.println(array);
+    array.print();
     array.pushback(3);
-    System.out.println(array);
+    array.print();
     array.pushback(4);
-    System.out.println(array);
+    array.print();
     array.pushback(5);
-    System.out.println(array);
-    array.pushback(7);
-    System.out.println(array);
+    array.print();
+    array.popback();
+    array.print();
+    System.out.println(array.get(1));
+    array.insert(1, 25);
+    array.print();
   }
 }
 
@@ -29,6 +32,34 @@ class DynamicArray {
     capacity = 2;
     length = 0;
     arr = new int[2];
+  }
+
+//  Insert n at i-th index
+  public void insert(int i, int n) {
+    if (i < length) {
+      arr[i] = n;
+      return;
+    }
+
+    return;
+    // Here we would throw an index out of bounds exception
+  }
+
+  // Get value at i-th index
+  public int get(int i) {
+    if (i < length) {
+      return arr[i];
+    }
+    // Here we would throw an index out of bounds exception
+    return -1;
+  }
+
+
+//  Remove the last element in the array
+  public void popback() {
+    if (length > 0) {
+      length--;
+    }
   }
 
   // insert n in the last position of the array
@@ -53,6 +84,21 @@ class DynamicArray {
     }
 
     arr = newArr;
+  }
+
+  public void print() {
+    System.out.print("[");
+    for (int i = 0; i < length; i++) {
+      if (i > 0) {
+        System.out.print(" ");
+      }
+      System.out.print(arr[i]);
+
+      if (i < length - 1) {
+        System.out.print(",");
+      }
+    }
+    System.out.println("]");
   }
 
   @Override
